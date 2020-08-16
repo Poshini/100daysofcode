@@ -1,0 +1,25 @@
+#include <stdio.h>
+int automorphic(int n)
+{
+    int s;
+    s=n*n;
+    while(n>0)
+    {
+        if(n %10 != s %10)
+         return 0;
+        
+        n/=10;
+        s/=10;
+    }
+    return 1;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    if(automorphic(n))
+     printf(" %d is automorphic",n);
+    else
+     printf(" %d is not automorphic",n);
+    return 0;
+}
