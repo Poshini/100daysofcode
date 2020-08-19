@@ -1,0 +1,30 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cout<<"Enter the number of elements in first array: ";
+    cin>>n;
+    cout<<"Enter the number of elements in second array: ";
+    cin>>m;
+    vector<int>v1(n+m);
+    vector<int>v2(m);
+    cout<<"Enter the elements of first array: ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>v1[i];
+    }
+    cout<<"Enter the elements of second array: ";
+    for(int i=0;i<m;i++)
+    {
+      cin>>v2[i];
+    }
+    for(int i=n,j=0;i < n+m ,j<m;i++,j++)
+    v1[i]=v2[j];
+    sort(v1.begin(),v1.end());
+    for(auto i : v1)
+    cout<<i<<" ";
+    return 0;
+}
