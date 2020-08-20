@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int gcd(int x,int y)
+{
+    if(y==0)
+    return x;
+    int  n = x%y;
+    gcd(y,n);
+}
+int main()
+{
+int x,y;
+cin>>x>>y;
+int z = gcd(x,y);
+cout<<z;
+}
