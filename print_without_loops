@@ -1,0 +1,22 @@
+#include <iostream> 
+#include <setjmp.h> 
+using namespace std; 
+  
+jmp_buf buf; 
+  
+int main() 
+{ 
+    int x;
+    cout<<"Enter the number: ";
+    cin>>x;
+  
+    setjmp(buf); 
+    cout <<x<<" ";
+  
+    x++; 
+    if (x <= 100) 
+  
+        longjmp(buf,1); 
+  
+    return 0; 
+} 
