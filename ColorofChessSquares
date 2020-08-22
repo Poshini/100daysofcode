@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cctype>
+using namespace std;
+
+int main()
+{
+	char s[10],n;
+	cout << "Enter the coordinates of the square,  first coordinate  b/w A & H and second coordinate  b/w 1 & 8 : ";
+	cin.getline(s, 10);
+	n = s[0];
+	n = tolower(n);
+	s[0] = n;
+	if (s[0] == 'a' || s[0] == 'c' || s[0] == 'e' || s[0] == 'g')
+	{
+		if (s[1] == '1' || s[1] == '3' || s[1] == '5' || s[1] == '7')
+			cout << "Black Square";
+		else
+			cout << "White Square";
+	}
+	else if(s[0]=='b' || s[0]=='d' || s[0]=='f' || s[0]=='h')
+	{
+		if (s[1] == '1' || s[1] == '3' || s[1] == '5' || s[1] == '7')
+			cout << "White Square";
+		else
+			cout << "Black Square";
+	}
+  else
+  cout<<"INVALID CO-ORDINATES";
+
+	return 0;
+}
