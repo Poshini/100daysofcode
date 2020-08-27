@@ -1,0 +1,37 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int n;
+  cout<<"Enter the number of elements: ";
+  cin>>n;
+  int a[n];
+  cout<<"Enter the elements: ";
+  for(int i=0;i<n;i++)
+  {
+    cin>>a[i];
+  }
+  unordered_map<int,int>hash;
+  for(int i=0;i<n;i++)
+  {
+    hash[a[i]]++;
+  }
+   
+  cout<<"Non-repeated elements are: ";
+  for(auto it=hash.begin();it!=hash.end();it++)
+  {
+    if(it->second == 1)
+    {
+      cout<< it -> first<< " ";
+    }
+  }
+  return 0;
+}
+
+
+OUTPUT
+Enter the number of elements: 9
+Enter the elements: 4 6 4 1 8 9 1 9 0 
+Non-repeated elements are: 0 8 6
