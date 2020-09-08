@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int m, n, sum = 0;
+	cout << "\nEnter the order of the matrix : ";
+	cin >> m >> n;
+  int n1 = n-1;
+	int i, j;
+	int mat[m][n];
+	cout << "\nInput the matrix elements\n";
+	for(i = 0; i < m; i++)
+		{
+			for(j = 0; j < n; j++)
+			cin >> mat[i][j];
+		}
+
+	cout << "\nBoundary Matrix\n";
+	for(i = 0; i < m; i++)
+		{
+			for(j = 0; j < n; j++)
+				{
+					if (i == 0 || j == 0 || i == n1 || j == n1)
+						{
+							cout << mat[i][j] <<" ";
+							sum = sum + mat[i][j];
+						}
+					else
+							cout <<"  ";
+				}
+		cout << endl;
+	}
+	cout << "\nSum of boundary is " << sum << endl;
+}
+
+           OUTPUT
+  Enter the order of matrix: 4 4
+  Input the matrix elements: 
+  3 5 1 8
+  1 7 2 0
+  3 7 1 9
+  4 1 6 7
+  
+  Boundary matrix:
+  3 5 1 8
+  1     0
+  3     9
+  4 1 6 7
+  
+  Sum of boundary is: 48
