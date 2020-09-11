@@ -1,0 +1,14 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+int n;
+cout << "Enter the number : ";
+cin >> n;
+cout << "Factorial of the number " << n << " is "<<tgamma(n + 1); ;
+}
+
+       OUTPUT
+  Enter the number: 8
+  Factorial of the number 8 is 40320
