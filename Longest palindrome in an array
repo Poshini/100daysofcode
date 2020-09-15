@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool check_palindrome(int n)
+{
+int div = 1;
+while (n / div >= 10)
+div *= 10;
+
+while (n != 0)
+{
+int first = n / div;
+int last = n % 10;
+
+if (first != last)
+return false;
+
+n = (n % div) / 10;
+
+div = div / 100;
+}
+return true;
+}
+int large_palindrome(int A[], int n)
+{
+  sort(A, A + n);
+  for (int i = n-1; i >= 0; --i)
+  {
+    if (check_palindrome(A[i]))
+    return A[i];
+  }
+  return -1;
+}
+int main()
+{
+  int a[15], n, i;
+  cout<<"Enter the number of entries: ";
+  cin>>n;
+  cout<<"Enter the elements: "<<endl;
+  for(i=0; i<n; i++)
+  cin>>a[i];
+  cout <<"Largest Palindrome: "<< large_palindrome(a, n);
+  return 0;
+}
+
+     OUTPUT
+ Enter the number of entries: 6
+ Enter the elements: 121 980 543 83138 0110 285
+ Largest Palindrome: 83138
