@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int Calculate_median(int a1[], int a2[], int n)
+{
+  int i = 0;
+  int j = 0;
+  int c;
+  int x = -1, y = -1;
+
+  for (c = 0; c <= n; c++)
+   {
+     if (i == n)
+     { 
+      x = y;
+      y = a2[0];
+      break;
+     }
+     else if (j == n)
+     {
+       x = y;
+       y = a1[0];
+       break;
+     }
+
+    if (a1[i] < a2[j])
+    {
+
+      x = y;
+      y = a1[i];
+      i++;
+    }
+    else
+    {
+
+      x = y;
+      y = a2[j];
+      j++;
+    }
+  }
+
+  return (x + y)/2;
+}
+int main()
+{
+  int a1[10], a2[10], n, i;
+  cout<<"Enter the  number of elements: ";
+  cin>>n;
+  
+  cout<<"Enter elements of first array: ";
+  for(i=0; i<n; i++)
+  cin>> a1[i];
+
+  cout<<"Enter elements of second array: ";
+  for(i=0; i<n; i++)
+  cin>> a2[i];
+
+  cout <<"Median is: "<<Calculate_median(a1, a2, n) ;
+  return 0;
+}
+            OUTPUT
+ Enter the number of elements: 4
+ Enter the elemens of first array: 1 3 5 7
+ Enter the elements of second array: 0 2 4 6
+ Median is: 3
