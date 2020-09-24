@@ -1,0 +1,17 @@
+#include<bits/stdc++.h> 
+using namespace std;
+  
+int main () 
+{ 
+   int a,b;
+   cout<<"Enter the two numbers: ";
+   cin>>a>>b;
+   printf("max = %d\n", ((a + b) + abs(a - b)) / 2); 
+   printf("min = %d", ((a + b) - abs(a - b)) / 2); 
+   return 0; 
+}
+
+     OUTPUT
+Enter the two numbers: 78 89
+max = 89
+min = 78
