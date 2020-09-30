@@ -1,0 +1,69 @@
+#include<iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    int a[10][10],i,j,m;
+    cout<<"Enter size of the Matrix:";
+    cin>>m;
+    cout<<"\nEnter the Matrix row wise:\n";
+ 
+    for(i=0;i<m;i++)
+        for(j=0;j<m;++j)
+            cin>>a[i][j];
+ 
+    cout<<"\n\n";
+ 
+    cout<<"Upperhalf  of  Triangle Matrix : \n";
+ 
+    for(i=0;i<m;++i)
+    {
+        for(j=0;j<m;++j)
+        {
+            if(i<j)
+                cout<<a[i][j]<<" ";
+            else
+                cout<<"  ";
+        }
+ 
+        cout<<"\n";
+    }
+ 
+    cout<<"\n";
+ 
+    cout<<"Lowerhalf  of  Triangle Matri :: \n";
+ 
+    for(i=0;i<m;++i)
+    {
+        for(j=0;j<m;++j)
+        {
+            if(j<i)
+                cout<<a[i][j]<<" ";
+            else
+                cout<<" ";
+        }
+        cout<<"\n";
+    }
+ 
+    return 0;
+}
+     OUTPUT
+Enter  size of matrix : 5
+Enter the matrix row wise :
+3 5 7 1 9
+0 9 4 1 7
+3 6 8 4 2
+1 2 3 4 5
+2 3 4 5 6
+
+Upperhalf of Triangle Matrix :
+  5 7 1 9 
+    4 1 7
+      4 2
+        5
+Lowehalf of Triangle Matrix :
+0
+3 6
+1 2 3
+2 3 4 5
