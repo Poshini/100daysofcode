@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+    int a[10][10],d1sum=0,d2sum=0,m,i,j;
+    cout<<"Enter size of matrix : ";
+    cin>>m;
+    cout<<"\nEnter elements below : \n";
+ 
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<m;++j)
+        {
+          cin>>a[i][j];
+        }
+ 
+    }
+ 
+    cout<<"\nThe given matrix is : \n\n";
+        for (i = 0; i < m; ++i)
+        {
+            for (j = 0; j < m; ++j)
+            {
+                cout<<"\t"<<a[i][j];
+            }
+            printf("\n\n");
+        }
+ 
+ 
+ 
+    for(i=0;i<m;++i)
+        for(j=0;j<m;++j)
+        {
+            if(i==j)
+                d1sum+=a[i][j];
+            if(i+j==(m-1))
+                d2sum+=a[i][j];
+        }
+ 
+    cout<<"\nSum of 1st diagonal is : "<<d1sum;
+    cout<<"\n\nSum of 2nd diagonal is : "<<d2sum;
+ 
+    return 0;
+}
+      OUTPUT
+Enter size od matrix : 3
+Enter elements below :
+5 6 7
+4 2 1
+9 8 0
+
+The given matrix is :
+5  6  7
+4  2  1
+9  8  0
+
+Sum of 1st diagonal is : 7
+Sum of 2nd diagonal is : 18
