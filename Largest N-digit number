@@ -1,0 +1,43 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+void maximizedNdigit(int n) 
+{ 
+  
+    int count0s, count9s; 
+    if (n % 4 == 0) 
+    { 
+  
+        count0s = n / 4; 
+        count9s = n - n / 4; 
+    } 
+  
+    else 
+    { 
+  
+        count0s = n / 4 + 1; 
+        count9s = n - count0s; 
+        count0s--; 
+    } 
+  
+    while (count9s--) 
+        cout << '9'; 
+  
+    if (n % 4 != 0) 
+        cout << '8'; 
+  
+    while (count0s--) 
+        cout << '0'; 
+    cout << endl; 
+} 
+  
+int main() 
+{ 
+    int n;
+    cout<<"Enter the number : ";
+    cin>>n;
+    maximizedNdigit(n); 
+} 
+     OUTPUT
+Enter the number : 5
+99980
