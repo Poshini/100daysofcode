@@ -1,0 +1,54 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+const int MAX_CHAR = 256; 
+  
+int kthNonRepeating(string str, int k) 
+{ 
+    int n = str.length(); 
+
+    int count[MAX_CHAR]; 
+    int index[MAX_CHAR]; 
+
+    for (int i = 0; i < MAX_CHAR; i++) 
+    { 
+        count[i] = 0; 
+        index[i] = n; 
+    } 
+   
+    for (int i = 0; i < n; i++) 
+    {
+        char x = str[i]; 
+        ++count[x]; 
+
+        if (count[x] == 1) 
+            index[x] = i; 
+  
+  
+        if (count[x] == 2) 
+            index[x] = n; 
+    } 
+  
+    sort(index, index+MAX_CHAR); 
+   
+    return (index[k-1] != n)? index[k-1] : -1; 
+} 
+
+int main() 
+{ 
+   string str;
+   cout<<"Enter the string: ";
+   cin>>str; 
+   int k;
+   cout<<"Enter the value: ";
+   cin>>k;
+   int res = kthNonRepeating(str, k); 
+   (res == -1)? cout << "There are less than"<<k<<" non-"
+                        "repeating characters"
+              : cout <<k<< "th non-repeating character is "<< str[res]; 
+   return 0; 
+} 
+ 
+    OUTPUT
+Enter the string: codingcodes
+Enter the value: 5
+5th non-repeating character is s
