@@ -3,7 +3,8 @@
 #include<string.h>
 #define MAX 30
 
-int top=-1; 
+int top=-1;
+
 int stack[MAX];
 
 void push(char item)
