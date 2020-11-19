@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+
+int drops(int length, int position[], 
+          int speed[], int n)
+{    
+    
+    vector<pair<int, double> > m(n);
+ 
+    int i;
+    for (i = 0; i < n; i++) 
+    {
+ 
+        int p = length - position[i]; 
+ 
+    
+        m[i].first = position[i]; 
+ 
+        m[i].second = p * 1.0 / speed[i]; 
+    }
+ 
+
+    sort(m.begin(), m.end()); 
+    int k = 0;
+ 
+    int curr_max = m[n-1].second;
+ 
+    for (i = n - 2; i >= 0; i--)
+    {
+        if (m[i].second > curr_max)
+        {
+            k++;
+              curr_max=m[i].second;
+        }
+    }
+ 
+    k++; 
+    return k;
+}
+ 
+int main() 
+{
+    int length = 12; 
+   
+    int position[] = { 10, 8, 0, 5, 3 }; 
+   
+    int speed[] = { 2, 4, 1, 1, 3 }; 
+    int n = sizeof(speed)/sizeof(speed[0]);
+    cout << drops(length, position, speed, n);
+    return 0;
+}
+     OUTPUT
+  3
