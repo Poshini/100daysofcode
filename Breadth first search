@@ -4,7 +4,7 @@
 using namespace std; 
   
 
-class Graph 
+class Graph    
 { 
     int V;   
     list<int> *adj;    
